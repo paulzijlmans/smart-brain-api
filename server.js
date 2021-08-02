@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const bcrypt = require('bcrypt-nodejs');
 
 const app = express();
 
@@ -80,6 +81,8 @@ app.put('/image', (req, res) => {
     res.status(400).json('Not found');
   }
 });
+
+
 
 app.listen(3000, () => {
   console.log('App is running on port 3000!');
