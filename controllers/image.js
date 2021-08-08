@@ -1,3 +1,14 @@
+import Clarifai from 'clarifai';
+
+const app = new Clarifai.App({
+  apiKey: 'f66a5232e20740b2b15f43b94af615c3'
+});
+
+const handleApiCall = (req, res) => {
+  app.models
+    .predict('f76196b43bbd45c99b4f3cd8e8b40a8a', req.body.input);
+}
+
 const handleImage = (db) => (req, res) => {
   const { id } = req.body;
   db('users').where('id', id)
@@ -10,5 +21,6 @@ const handleImage = (db) => (req, res) => {
 }
 
 module.exports = {
-  handleImage
+  handleImage,
+  handleApiCall
 }
