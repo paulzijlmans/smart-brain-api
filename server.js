@@ -4,6 +4,7 @@ const bcrypt = require('bcrypt-nodejs');
 const cors = require('cors');
 const knex = require('knex');
 const dotenv = require('dotenv');
+const morgan = require('morgan');
 
 dotenv.config();
 
@@ -14,16 +15,12 @@ const image = require('./controllers/image');
 
 const db = knex({
   client: 'pg',
-  connection: {
-    host : process.env.POSTGRES_HOST,
-    user : process.env.POSTGRES_USER,
-    password : process.env.POSTGRES_PASSWORD,
-    database : process.env.POSTGRES_DB
-  }
+  connection: process.env.POSTGRES_URI
 });
 
 const app = express();
 
+app.use(morgan('combined'));
 app.use(bodyParser.json());
 app.use(cors());
 

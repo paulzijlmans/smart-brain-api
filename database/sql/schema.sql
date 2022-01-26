@@ -1,3 +1,5 @@
+BEGIN TRANSACTION;
+
 CREATE TABLE users (
   id serial PRIMARY KEY, 
   name VARCHAR(100), 
@@ -11,3 +13,5 @@ CREATE TABLE login (
   hash VARCHAR(100) NOT NULL,
   email text UNIQUE NOT NULL 
 );
+
+COMMIT;
