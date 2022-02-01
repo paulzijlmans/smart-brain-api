@@ -1,5 +1,3 @@
-# Environment Variables
-- PORT
-- POSTGRES_URI
-- CLARIFAI_API_KEY
-- JWT_SECRET
+Smart Brain API
+
+Create an .env file based on the .env.template file.
