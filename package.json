@@ -21,7 +21,7 @@
     "knex": "^0.95.9",
     "morgan": "^1.10.0",
     "pg": "^8.7.1",
-    "redis": "^2.8.0"
+    "redis": "^4.0.3"
   },
   "devDependencies": {
     "nodemon": "^2.0.12"
