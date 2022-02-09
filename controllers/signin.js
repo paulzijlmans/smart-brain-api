@@ -30,7 +30,7 @@ const getAuthTokenId = (req, res) => {
       return res.status(400).json('Unauthorized');
     }
     return res.json({ id: reply });
-  })
+  });
 }
 
 const signToken = (email) => {
